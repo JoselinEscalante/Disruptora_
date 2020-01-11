@@ -1,31 +1,9 @@
 # -*- coding: utf-8 -*-
-"""
-Created on Thu Dec  5 18:22:01 2019
 
-@author: 52469
-"""
 
 
 import pandas as pd
 import numpy as np
-
-#Lee el archivo y lo coloca tipo dataframe pero es un diccionarioi
-data=pd.read_table("C:/Users/52469/Desktop/Data Science curso Disruptora/Proyecto 2/Arritmia con vacios.csv", sep=",")
-#Identificando columnas con valores vacíos
-data.columns[data.isna().any()].tolist()
-
-#Haciendo binarias las variables con valores vacíos
-#data=np.isnan(data.T)
-#data=np.isnan(data.P)
-#data=np.isnan(data.QRST)
-#data=np.isnan(data.J)
-from sklearn.impute import SimpleImputer
-imp = SimpleImputer(strategy="mean")
-imp.fit_transform(data.Frecuencia_cardiaca)
-imp.fit_transform(data.T)
-imp.fit_transform(data.P)
-imp.fit_transform(data.QRST)
-imp.fit_transform(data.J)
 
 
 
